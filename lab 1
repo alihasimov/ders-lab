@@ -1,0 +1,13 @@
+x = 0.1
+epsilon = 0.01
+n = 1
+term = x
+P = 0
+
+while abs(term) >= epsilon:
+    term = ((-1) ** (n + 1)) * (x ** n) / n
+    P += term
+    n += 1
+
+print("Cəmin qiyməti:", round(P, 5))
+print("İstifadə olunan terminlərin sayı:", n - 1)
