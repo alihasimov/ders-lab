@@ -1,0 +1,23 @@
+with open("massiv.txt", "w") as f:
+    massiv = [
+        [3, 10, 15],
+        [8, 9, 11],
+        [7, 14, 5]
+    ]
+    for sətir in massiv:
+        f.write(" ".join(map(str, sətir)) + "\n")
+
+boyuk_ededler = []
+with open("massiv.txt", "r") as f:
+    for sətr in f:
+        ədədlər = list(map(int, sətr.split()))
+        for x in ədədlər:
+            if x > 9:
+                boyuk_ededler.append(x)
+
+with open("boyuk_ededler.txt", "w") as f:
+    for x in boyuk_ededler:
+        f.write(str(x) + "\n")
+
+cem = sum(boyuk_ededler)
+print("9-dan böyük ədədlərin cəmi:", cem)
